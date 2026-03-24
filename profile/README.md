@@ -1,20 +1,27 @@
-## RararuLab
+<div align="center">
+  <h1>RararuLab</h1>
+  <h3>Infrastructure for AI agents that ship.</h3>
+  <p>We build focused, production-grade agent systems and developer tooling.<br/>Each project solves one problem well — together they form a composable AI agent stack.</p>
+</div>
 
-Independent product lab building focused AI tools for technical teams.
+---
 
-We ship practical, production-grade systems with strong engineering foundations. Each product solves a concrete workflow problem — together they form an extensible AI toolchain.
-
-### Products
+**Agent Systems**
 
 | Project | Description |
 |---------|-------------|
-| [Rara](https://github.com/rararulab/rara) | Proactive developer agent with tape memory, tool orchestration, and multi-channel interfaces |
-| [Rara Trading](https://github.com/rararulab/rara-trading) | Automated strategy tooling and execution infrastructure for systematic market operations |
+| [Rara](https://github.com/rararulab/rara) | Developer agent with tape memory, tool orchestration, and multi-channel interfaces |
+| [Kotoba](https://github.com/rararulab/kotoba) | Language tools and agent experiments for pragmatic developer workflows |
+
+**Infra & Tooling**
+
+| Project | Description |
+|---------|-------------|
+| [Rara Trading](https://github.com/rararulab/rara-trading) | Strategy tooling and execution infrastructure for systematic market operations |
 | [Tenki](https://github.com/rararulab/tenki) | Service tooling for production-grade reliability patterns |
-| [Kotoba](https://github.com/rararulab/kotoba) | Language and agent-adjacent experiments for pragmatic developer workflows |
 
-### Principles
+---
 
-- **Production over demo** — designed for real operational constraints
-- **Composable architecture** — products work alone but integrate when needed
-- **Fast iteration loop** — small, testable increments with direct feedback
+<div align="center">
+  <sub>Production over demo · Composable architecture · Fast iteration</sub>
+</div>
