@@ -1,0 +1,26 @@
+# Rust
+/target/
+/bin/
+*.wasm
+
+# Git worktrees
+.worktrees/
+
+# Vendored dependencies
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+docs/plans/
