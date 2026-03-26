@@ -1,27 +1,32 @@
-<div align="center">
-  <h1>RararuLab</h1>
-  <h3>Infrastructure for AI agents that ship.</h3>
-  <p>We build focused, production-grade agent systems and developer tooling.<br/>Each project solves one problem well — together they form a composable AI agent stack.</p>
-</div>
+# RararuLab
 
----
+> Focused AI tools for technical teams.
 
-**Agent Systems**
+We build production-grade agent systems and developer tooling in Rust. Each project solves one problem well.
 
-| Project | Description |
-|---------|-------------|
-| [Rara](https://github.com/rararulab/rara) | Developer agent with tape memory, tool orchestration, and multi-channel interfaces |
-| [Kotoba](https://github.com/rararulab/kotoba) | Language tools and agent experiments for pragmatic developer workflows |
+## Projects
 
-**Infra & Tooling**
+- [rara](https://github.com/rararulab/rara) — proactive developer agent with tape memory, tool orchestration, and multi-channel interfaces
+- [rara-trading](https://github.com/rararulab/rara-trading) — self-iterating auto-research trading agent CLI
+- [rara-skills](https://github.com/rararulab/rara-skills) — agent skill marketplace for development workflow and code review
+- [kotoba](https://github.com/rararulab/kotoba) — immersive Japanese language learning CLI with SRS and VOICEVOX TTS
+- [tenki](https://github.com/rararulab/tenki) — agent-native job application tracker CLI
+- [sovits-rs](https://github.com/rararulab/sovits-rs) — GPT-SoVITS ONNX inference engine in Rust
 
-| Project | Description |
-|---------|-------------|
-| [Rara Trading](https://github.com/rararulab/rara-trading) | Strategy tooling and execution infrastructure for systematic market operations |
-| [Tenki](https://github.com/rararulab/tenki) | Service tooling for production-grade reliability patterns |
+## Tooling
 
----
+- [devkit](https://github.com/rararulab/devkit) — developer toolkit for rara: worktree manager, AGENT.md checker, dependency linter
+- [workflows](https://github.com/rararulab/workflows) — shared reusable GitHub Actions workflows
+- [cli-template](https://github.com/rararulab/cli-template) — opinionated Rust CLI template with clap, snafu, tokio, tracing, and CI/CD
+- [style](https://github.com/rararulab/style) — soft pink design tokens for web, CLI, TUI, desktop
+- [wechat-agent-rs](https://github.com/rararulab/wechat-agent-rs) — Rust SDK for WeChat Agent (iLink Bot)
 
-<div align="center">
-  <sub>Production over demo · Composable architecture · Fast iteration</sub>
-</div>
+## Website
+
+- [rararulab.com](https://rararulab.com)
+
+## Principles
+
+- Ship production tools, not demos.
+- One project, one problem.
+- Rust-first, agent-native.
