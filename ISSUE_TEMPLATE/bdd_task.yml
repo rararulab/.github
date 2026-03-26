@@ -1,0 +1,105 @@
+name: BDD Task
+description: Feature or bugfix with BDD acceptance criteria (for agent-driven workflow)
+labels: ["enhancement", "bdd"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## BDD Task
+        This template is used by the `bdd-design` agent to create well-defined issues
+        with Gherkin acceptance criteria. The `bdd-implement` agent consumes these issues.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be done and why? (2-3 sentences)
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-file
+    attributes:
+      label: ".feature (Acceptance Criteria)"
+      description: |
+        Complete Gherkin scenarios. Minimum 3 scenarios (happy path + error + edge case).
+        Use @AC-XX tags per scenario. Steps must be concrete and verifiable.
+      placeholder: |
+        @module-name
+        Feature: Feature title
+
+          @AC-01
+          Scenario: AC-01 Happy path description
+            Given some precondition
+            When some action
+            Then expected result
+
+          @AC-02
+          Scenario: AC-02 Error case description
+            Given some precondition
+            When some invalid action
+            Then error result
+
+          @AC-03
+          Scenario: AC-03 Edge case description
+            Given edge condition
+            When action
+            Then expected behavior
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: design-spec
+    attributes:
+      label: Design Spec
+      description: |
+        Which files to modify/create, key interface signatures, and constraints.
+        The implementation agent follows this exactly.
+      placeholder: |
+        ## Files to modify
+        - `src/module/file.rs` — what to change
+
+        ## Files to create
+        - `src/module/new_file.rs` — what it does
+
+        ## Key interfaces
+        - `fn function_name(args) -> Result<Type>`
+
+        ## Constraints
+        - Do NOT do X because Y
+      render: markdown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of the system does this relate to?
+      options:
+        - core (runtime, engine, core logic)
+        - backend (API, server, services)
+        - frontend (web UI, dashboard)
+        - cli (command-line interface)
+        - ci (CI/CD, build, release)
+        - docs (documentation)
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Affected modules, crates, or directories.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Context
+      description: References, parent issues, constraints, or design notes.
+    validations:
+      required: false
