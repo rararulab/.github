@@ -13,5 +13,8 @@
 @docs/code-comments.md
 @docs/agent-md.md
 
+## CLI Design
+@docs/agent-friendly-cli.md
+
 ## Guardrails
 @docs/anti-patterns.md
