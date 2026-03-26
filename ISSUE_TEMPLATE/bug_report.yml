@@ -1,0 +1,51 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of the system is affected?
+      options:
+        - core (runtime, engine, core logic)
+        - backend (API, server, services)
+        - frontend (web UI, dashboard)
+        - cli (command-line interface)
+        - ci (CI/CD, build, release)
+        - docs (documentation)
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to reproduce the issue
+      placeholder: |
+        1. Run `...`
+        2. Send request to ...
+        3. Observe error ...
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Error output
+      description: Relevant log output or error messages
+      render: shell
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of the relevant version command
+      placeholder: "v0.1.0"
