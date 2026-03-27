@@ -1,0 +1,89 @@
+name: BDD Task
+description: Feature or bugfix with BDD acceptance criteria (for agent-driven workflow)
+labels: ["bdd", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This template is for the **agent-driven BDD workflow**.
+        Provide complete Gherkin scenarios so that `rara-bdd` can generate
+        step definitions and the CI pipeline can validate coverage.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What and why?
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature-file
+    attributes:
+      label: Feature file
+      description: |
+        Complete Gherkin scenarios. Minimum 3 scenarios (happy path + error + edge case).
+        Use @AC-XX tags for each scenario. Use concrete Given/When/Then steps.
+      placeholder: |
+        @module-name
+        Feature: Short feature title
+
+          @AC-01
+          Scenario: Happy path
+            Given ...
+            When ...
+            Then ...
+
+          @AC-02
+          Scenario: Error case
+            Given ...
+            When ...
+            Then ...
+
+          @AC-03
+          Scenario: Edge case
+            Given ...
+            When ...
+            Then ...
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: design-spec
+    attributes:
+      label: Design spec
+      description: Files to create/modify, interfaces, constraints
+      render: markdown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of the system does this relate to?
+      options:
+        - core (runtime, engine, core logic)
+        - backend (API, server, services)
+        - frontend (web UI, dashboard)
+        - cli (command-line interface)
+        - ci (CI/CD, build, release)
+        - docs (documentation)
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Affected modules and directories
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Any other information that might be helpful

@@ -1,0 +1,48 @@
+name: BDD Tests
+
+on:
+  workflow_call:
+    inputs:
+      features-dir:
+        description: "Path to features directory"
+        required: false
+        type: string
+        default: "features"
+      steps-dir:
+        description: "Path to step definitions directory"
+        required: false
+        type: string
+        default: "tests/steps"
+      rust-toolchain:
+        description: "Rust toolchain to use"
+        required: false
+        type: string
+        default: "stable"
+
+permissions:
+  contents: read
+
+jobs:
+  bdd:
+    name: BDD Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ inputs.rust-toolchain }}
+      - name: Cache cargo
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-bdd-${{ hashFiles('**/Cargo.lock') }}
+      - name: Install rara-bdd
+        run: cargo install --git https://github.com/rararulab/rara-bdd
+      - name: Check step coverage
+        run: rara-bdd coverage --features-dir ${{ inputs.features-dir }} --steps-dir ${{ inputs.steps-dir }}
+      - name: Run BDD tests
+        run: cargo test --test bdd
