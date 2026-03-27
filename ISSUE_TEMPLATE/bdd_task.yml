@@ -1,50 +1,50 @@
 name: BDD Task
 description: Feature or bugfix with BDD acceptance criteria (for agent-driven workflow)
-labels: ["bdd", "enhancement"]
+labels: ["enhancement", "bdd"]
 body:
   - type: markdown
     attributes:
       value: |
-        This template is for the **agent-driven BDD workflow**.
-        Provide complete Gherkin scenarios so that `rara-bdd` can generate
-        step definitions and the CI pipeline can validate coverage.
+        ## BDD Task
+        This template is used by the `bdd-design` agent to create well-defined issues
+        with Gherkin acceptance criteria. The `bdd-implement` agent consumes these issues.
 
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: What and why?
+      description: What needs to be done and why? (2-3 sentences)
     validations:
       required: true
 
   - type: textarea
     id: feature-file
     attributes:
-      label: Feature file
+      label: ".feature (Acceptance Criteria)"
       description: |
         Complete Gherkin scenarios. Minimum 3 scenarios (happy path + error + edge case).
-        Use @AC-XX tags for each scenario. Use concrete Given/When/Then steps.
+        Use @AC-XX tags per scenario. Steps must be concrete and verifiable.
       placeholder: |
         @module-name
-        Feature: Short feature title
+        Feature: Feature title
 
           @AC-01
-          Scenario: Happy path
-            Given ...
-            When ...
-            Then ...
+          Scenario: Happy path description
+            Given some precondition
+            When some action
+            Then expected result
 
           @AC-02
-          Scenario: Error case
-            Given ...
-            When ...
-            Then ...
+          Scenario: Error case description
+            Given some precondition
+            When some invalid action
+            Then error result
 
           @AC-03
-          Scenario: Edge case
-            Given ...
-            When ...
-            Then ...
+          Scenario: Edge case description
+            Given edge condition
+            When action
+            Then expected behavior
       render: text
     validations:
       required: true
@@ -52,8 +52,22 @@ body:
   - type: textarea
     id: design-spec
     attributes:
-      label: Design spec
-      description: Files to create/modify, interfaces, constraints
+      label: Design Spec
+      description: |
+        Which files to modify/create, key interface signatures, and constraints.
+        The implementation agent follows this exactly.
+      placeholder: |
+        ## Files to modify
+        - `src/module/file.rs` — what to change
+
+        ## Files to create
+        - `src/module/new_file.rs` — what it does
+
+        ## Key interfaces
+        - `fn function_name(args) -> Result<Type>`
+
+        ## Constraints
+        - Do NOT do X because Y
       render: markdown
     validations:
       required: true
@@ -78,12 +92,14 @@ body:
     id: scope
     attributes:
       label: Scope
-      description: Affected modules and directories
+      description: Affected modules, crates, or directories.
     validations:
       required: true
 
   - type: textarea
     id: notes
     attributes:
-      label: Additional context
-      description: Any other information that might be helpful
+      label: Additional Context
+      description: References, parent issues, constraints, or design notes.
+    validations:
+      required: false
