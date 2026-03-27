@@ -18,6 +18,29 @@ body:
       required: true
 
   - type: textarea
+    id: plan-spec
+    attributes:
+      label: Plan Spec
+      description: |
+        Product context, deliverables, constraints, and out of scope.
+        The implementation agent reads this to understand WHY the feature exists.
+      placeholder: |
+        **Product context:** Why this feature exists, what user problem it solves.
+
+        **Deliverables:**
+        - [ ] Deliverable 1 — brief description
+        - [ ] Deliverable 2 — brief description
+
+        **Constraints:**
+        - Constraint 1
+
+        **Out of scope:**
+        - Thing explicitly excluded
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
     id: feature-file
     attributes:
       label: ".feature (Acceptance Criteria)"
